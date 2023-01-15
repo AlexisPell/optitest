@@ -12,10 +12,8 @@ export class CarsService {
   // Fill database with default cars if they don't exist
   async onBootstrap() {
     const count = await this.carModel.count();
-    console.log('HERE???', count);
     if (count === 0) {
       const res = await this.carModel.insertMany(cars);
-      console.log('RES', res);
     }
   }
 
